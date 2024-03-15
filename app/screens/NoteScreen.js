@@ -2,6 +2,7 @@ import { StatusBar } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import SearchBar from '../components/SearchBar'
 import RoundIconBtn from '../components/RoundIconBtn'
+import NoteInputModal from '../components/NoteInputModal'
 import { View, StyleSheet, Text } from 'react-native'
 import colors from '../misc/colors'
 
@@ -35,7 +36,7 @@ const NoteScreen = ({ user }) => {
                     <RoundIconBtn onPress={() => console.log('opening model')} antIconName='plus' style={styles.addBtn} />
                 </View>
             </View>
-
+            <NoteInputModal visible={false} />
         </>
 
 

@@ -23,8 +23,8 @@ const [user, setUser]= useState({})
   
   
   useEffect(()=> {
-    findUser();
-    // AsyncStorage.clear()
+    // findUser();
+    AsyncStorage.clear()
   },[])
 
     if(!user.name) return <Intro onFinish={findUser} /> ;
