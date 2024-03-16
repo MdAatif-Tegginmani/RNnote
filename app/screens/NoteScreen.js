@@ -36,7 +36,7 @@ const NoteScreen = ({ user }) => {
                     <RoundIconBtn onPress={() => console.log('opening model')} antIconName='plus' style={styles.addBtn} />
                 </View>
             </View>
-            <NoteInputModal visible={false} />
+            <NoteInputModal visible={true} />
         </>
 
 

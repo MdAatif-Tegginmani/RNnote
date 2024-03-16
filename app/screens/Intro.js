@@ -4,12 +4,17 @@ import {
   View,
   StyleSheet,
   Text,
+  // ImageBackground,
   TextInput,
   StatusBar,
   Dimensions,
 } from "react-native";
 import RoundIconBtn from "../components/RoundIconBtn";
 import colors from "../misc/colors";
+
+
+// const image = { uri: '' };
+
 
 const Intro = ({ onFinish }) => {
   const [name, setName] = useState("");
@@ -20,21 +25,24 @@ const Intro = ({ onFinish }) => {
     await AsyncStorage.setItem("user", JSON.stringify(user));
     if (onFinish) onFinish();
   };
+  // <ImageBackground source={image} resizeMode="cover" style={styles.image}>
 
   return (
     <>
       <StatusBar hidden />
       <View style={styles.container}>
-        <Text style={styles.inputTitle}>Enter Your Name to Continue</Text>
-        <TextInput
-          value={name}
-          onChangeText={handleOnChangeText}
-          placeholder="Enter Name"
-          style={styles.textInput}
-        />
-        {name.trim().length >= 3 ? (
-          <RoundIconBtn antIconName="arrowright" onPress={handleSubmit} />
-        ) : null}
+          <Text style={styles.inputTitle}>Enter Your Name to Continue</Text>
+          <TextInput
+            value={name}
+            onChangeText={handleOnChangeText}
+            placeholder="Enter Name"
+            style={styles.textInput}
+          />
+          {name.trim().length >= 3 ? (
+            <RoundIconBtn antIconName="arrowright" onPress={handleSubmit} />
+          ) : null}
+        
+
       </View>
     </>
   );
@@ -46,6 +54,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  image: {
+    flex: 1,
+    justifyContent: 'center',
   },
   textInput: {
     borderWidth: 2,
