@@ -9,6 +9,7 @@ import colors from '../misc/colors'
 
 const NoteScreen = ({ user }) => {
     const [greet, setGreet] = useState('')
+    const [modalVisible, setModalVisible] = useState(false)
     const findGreet = () => {
         const hrs = new Date().getHours()
         if (hrs === 0 || hrs < 12) return setGreet("Morning")
